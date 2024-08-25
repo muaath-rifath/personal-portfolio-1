@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
 </head>
 
 <body>
@@ -22,16 +21,22 @@
             <a href="#">Project</a>
             <a href="#">Education</a>
         </nav>
-        <nav class="mobile-nav">
-            <a href="#" class="active">Portfolio</a>
-            <a href="#">Services</a>
-            <a href="#">Experience</a>
-            <a href="#">Project</a>
-            <a href="#">Education</a>
-        </nav>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
+
+        <div class="mobile-menu">
+            <div class="menu-icon" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#" class="active">Portfolio</a>
+                <a href="#">Services</a>
+                <a href="#">Experience</a>
+                <a href="#">Project</a>
+                <a href="#">Education</a>
+            </nav>
+        </div>
+
         <a href="#contact" class="contact-btn">contact me</a>
     </header>
 
@@ -86,8 +91,7 @@
         <div class="social">
             <a href="#"><i class='bx bxl-mail-circle'></i></a>
             <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="#"><i class='bx bxl-whatsapp-square'></i></a>
+            <a href=""><i class="bx bxl-github-circle"></i></a>
         </div>
 
         <ul class="list">
@@ -100,7 +104,21 @@
 
         <p class="copyright">© 2024 Imran Farhat | All rights reserved</p>
     </footer>
-    
+
+    <script>
+        function toggleMobileMenu() {
+            var mobileNav = document.querySelector('.mobile-nav');
+            var menuIcon = document.querySelector('.menu-icon');
+            
+            if (mobileNav.style.display === 'block') {
+                mobileNav.style.display = 'none';
+                menuIcon.classList.remove('open');
+            } else {
+                mobileNav.style.display = 'block';
+                menuIcon.classList.add('open');
+            }
+        }
+    </script>
 </body>
 
 </html>
